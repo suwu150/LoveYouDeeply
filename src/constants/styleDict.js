@@ -5,10 +5,9 @@ const _colorSet = {
   mainColor: '#fc933d',
   normalMainColor: '#514b46',
   fontColor: '#514b46',
-  pageBackground: '#f7f6f5',
+  pageBackground: '#fff',
   lineColor: '#eae6e4',
   tabInacColor: '#999693',
-  white: '#ffffff'
 };
 
 const _fontSet = {

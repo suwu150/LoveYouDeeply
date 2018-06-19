@@ -1,0 +1,1 @@
+export { default as RandomColor } from './randomColor';
