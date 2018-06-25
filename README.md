@@ -13,6 +13,7 @@ tags: react-native
 
 #### 二、效果
 ![image](https://user-images.githubusercontent.com/20339760/41852925-0f483f92-78bf-11e8-9a8f-04bdf05093d9.png)  
+![image](https://user-images.githubusercontent.com/20339760/41855454-491f38a0-78c5-11e8-9388-69d39a2f07ae.png)
 
 #### 三、下载安装与查看
 1.首先，通过命令进行克隆项目
@@ -31,11 +32,6 @@ npm install
 按照上面的过程实施之后，就可以看到效果了
 ####四、代码及实现过程
 1.项目结构如下所示： 
-
-<center>
-<img src="https://user-images.githubusercontent.com/20339760/41853485-73dbee9e-78c0-11e8-8c0c-e11b21f77207.png" width="25%" height="25%" />
-项目结构
-</center>
 其中，具体代码写在src中，在src中`assets`中放置静态资源，components中放置使用到的组件，constants中放置静态常量，pages中放置具体的页面
 utils中放置工具类 
 
