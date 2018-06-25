@@ -5,16 +5,16 @@ tags: react-native
 --- 
 
 --
-####一、背景    
+#### 一、背景    
 
 前段时间，突发奇想，想要自己做一款能够上架的app，就根据react-native进行了开发，其中具有的功能点就是情侣了解度的测试，通过一些
 情侣应该知道的问题进行测试双方的了解程度，了解的越多，则得分也就越高，在这个app里边区分男方和女方，用户点击进如对应的题库进行答
 题，最终获取分值    
 
-####二、效果
+#### 二、效果
 ![image](https://user-images.githubusercontent.com/20339760/41852925-0f483f92-78bf-11e8-9a8f-04bdf05093d9.png)  
 
-####三、下载安装与查看
+#### 三、下载安装与查看
 1.首先，通过命令进行克隆项目
 ```shell
 git clone https://github.com/suwu150/LoveYouDeeply.git
@@ -39,13 +39,13 @@ npm install
 其中，具体代码写在src中，在src中`assets`中放置静态资源，components中放置使用到的组件，constants中放置静态常量，pages中放置具体的页面
 utils中放置工具类 
 
-1.主页面代码(home)
+1.主页面代码(home)   
 2.内容界面(content)
-####五、下一版本待做功能
-[].增加远程服务器，进行数据存储   
+#### 五、下一版本待做功能
+[].增加远程服务器，进行数据存储      
 [].增加用户自己提交问题的功能
 
-####六、仓库地址
+#### 六、仓库地址
 欢迎访问代码仓库：[https://github.com/suwu150/LoveYouDeeply](https://github.com/suwu150/LoveYouDeeply) 点赞加星星
 
 
