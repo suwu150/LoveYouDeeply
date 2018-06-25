@@ -71553,7 +71553,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     lineNumber: 75
                   }
                 },
-                '左划选是'
+                '左滑选是'
               )
             ),
             _react2.default.createElement(
@@ -71585,7 +71585,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     lineNumber: 85
                   }
                 },
-                '上划也许是吧'
+                '上滑也许是吧'
               )
             ),
             _react2.default.createElement(
@@ -72847,6 +72847,34 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     "id": 17,
     "name": "是否知道他早上起床的时间",
     "score": 5
+  }, {
+    "id": 18,
+    "name": "是否知道怎么哄他开心",
+    "score": 5
+  }, {
+    "id": 19,
+    "name": "是否知道哪句话能点燃他的怒火",
+    "score": 5
+  }, {
+    "id": 20,
+    "name": "是否有做过让他伤心的事情",
+    "score": 5
+  }, {
+    "id": 21,
+    "name": "是否记得做过哪些让他感动的事情",
+    "score": 5
+  }, {
+    "id": 22,
+    "name": "是否知道只有彼此才知道的小秘密",
+    "score": 5
+  }, {
+    "id": 23,
+    "name": "是否有为他做过的一些举动而感到开心，甚至喜极而泣",
+    "score": 5
+  }, {
+    "id": 24,
+    "name": "是否有为他准备过一些小惊喜",
+    "score": 5
   }];
 },462,[],"src/constants/female_questions.json");
 __d(function (global, _require, module, exports, _dependencyMap) {
@@ -72933,6 +72961,34 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   }, {
     "id": 21,
     "name": "是否知道她的体重身高",
+    "score": 5
+  }, {
+    "id": 22,
+    "name": "是否知道怎么哄她开心",
+    "score": 5
+  }, {
+    "id": 23,
+    "name": "是否知道哪句话能点燃她的怒火",
+    "score": 5
+  }, {
+    "id": 24,
+    "name": "是否有做过让她伤心的事情",
+    "score": 5
+  }, {
+    "id": 25,
+    "name": "是否记得做过哪些让她感动的事情",
+    "score": 5
+  }, {
+    "id": 26,
+    "name": "是否知道只有彼此才知道的小秘密",
+    "score": 5
+  }, {
+    "id": 27,
+    "name": "是否有为她做过的一些举动而感到开心，甚至喜极而泣",
+    "score": 5
+  }, {
+    "id": 28,
+    "name": "是否有为她准备过一些小惊喜",
     "score": 5
   }];
 },463,[],"src/constants/male_questions.json");

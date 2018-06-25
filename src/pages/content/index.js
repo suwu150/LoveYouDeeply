@@ -12,18 +12,6 @@ import randomStyle from '../../utils/randomStyle';
 import femaleQuestions from '../../constants/female_questions.json';
 import maleQuestions from '../../constants/male_questions.json';
 
-const style = StyleSheet.create({
-  top: {
-    flex: 1,
-  },
-  center: {
-    flex: 1,
-  },
-  bottom: {
-    flex: 1,
-  }
-});
-
 export default class Home extends Component {
   constructor(props) {
     super(props);
