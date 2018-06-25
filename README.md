@@ -12,8 +12,7 @@ tags: react-native
 题，最终获取分值    
 
 #### 二、效果
-![image](https://user-images.githubusercontent.com/20339760/41852925-0f483f92-78bf-11e8-9a8f-04bdf05093d9.png)  
-![image](https://user-images.githubusercontent.com/20339760/41855454-491f38a0-78c5-11e8-9388-69d39a2f07ae.png)
+![image](https://github.com/suwu150/static-resource/blob/master/images/react-native/react-native-love-you-deeply.gif?raw=true)  
 
 #### 三、下载安装与查看
 1.首先，通过命令进行克隆项目
