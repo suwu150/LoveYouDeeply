@@ -43,6 +43,8 @@ utils中放置工具类
 #### 六、仓库地址
 欢迎访问代码仓库：[https://github.com/suwu150/LoveYouDeeply](https://github.com/suwu150/LoveYouDeeply) 点赞加星星
 
-
+#### 七、发布地址
+安卓app已经发布到[百度手机助手](http://shouji.baidu.com/software/24185511.html),点击下载装到你的手机吧！！
+其他发布地址正在跟进中...
     
     
