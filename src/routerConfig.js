@@ -1,9 +1,15 @@
 import Home from './pages/home';
 import Content from './pages/content';
+import About from './pages/about';
+import Instructions from './pages/instructions';
+import QuestionAdd from './pages/questionAdd';
 
 const stackConfig = {
   Home: { screen: Home },
   Content: { screen: Content },
+  About: { screen: About },
+  Instructions: { screen: Instructions },
+  QuestionAdd: { screen: QuestionAdd },
 };
 
 const stackNavigatorConfig = {

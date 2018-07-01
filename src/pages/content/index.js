@@ -52,41 +52,6 @@ export default class Home extends Component {
     const explainItem = styleDict.windowW / 3;
     return (
       <View style={{ flex: 1, alignItems: 'center' }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', width: styleDict.windowW,
-          height: 30, position: 'absolute', top: 0, zIndex: 999 }}
-        >
-          <View
-            style={{ width: explainItem, backgroundColor: '#ffa6f3', height: 30, borderBottomRightRadius: 30,
-              alignItems: 'center', justifyContent: 'center'
-            }}
-          >
-            <Text
-              style={{ alignSelf: 'flex-start', textAlign: 'left' }}
-            >
-              {'左滑选是'}
-            </Text>
-          </View>
-          <View
-            style={{ width: explainItem, backgroundColor: '#ffa6f3', height: 30, borderRadius: 30,
-              alignItems: 'center', justifyContent: 'center' }}
-          >
-            <Text
-              style={{ alignSelf: 'center', width: explainItem, textAlign: 'center' }}
-            >
-              {'上滑也许是吧'}
-            </Text>
-          </View>
-          <View
-            style={{ width: explainItem, backgroundColor: '#ffa6f3', height: 30, borderBottomLeftRadius: 30,
-              alignItems: 'center', justifyContent: 'center' }}
-          >
-            <Text
-              style={{ alignSelf: 'flex-end', width: explainItem, textAlign: 'right' }}
-            >
-              {'右滑选否'}
-            </Text>
-          </View>
-        </View>
         <View style={{ flex: 1 }}>
           <SwipeCards
             cards={this.state.questions}
