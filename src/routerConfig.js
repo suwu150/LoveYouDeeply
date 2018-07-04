@@ -17,7 +17,7 @@ const stackNavigatorConfig = {
   navigationOptions: {
     headerBackTitle: null,
     headerTintColor: '#fff',
-    title: '爱ta有多深',
+    title: '爱有多深',
     showIcon: true,
     swipeEnabled: false,
     animationEnabled: false,
