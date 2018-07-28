@@ -2,15 +2,13 @@
  * Created by jkwu on 2018/6/18.
  */
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import SwipeCards from 'react-native-swipe-cards';
 import Card from './card';
 import NoMoreCard from './noMoreCard';
 import styleDict from '../../constants/styleDict';
 import randomStyle from '../../utils/randomStyle';
-
-import femaleQuestions from '../../constants/female_questions.json';
-import maleQuestions from '../../constants/male_questions.json';
+import LocalKeyStore from '../../utils/storageUtil';
 
 export default class Home extends Component {
   constructor(props) {
@@ -19,9 +17,18 @@ export default class Home extends Component {
     const { params } = navigation.state;
     this.state = {
       gender: params.gender,
-      questions: (params.gender === 'male' ? maleQuestions : femaleQuestions) || [],
+      questions: [],
       totalScore: 0
     };
+  }
+
+  componentDidMount() {
+    const { navigation } = this.props;
+    const { params } = navigation.state;
+    const gender = params.gender === 'male' ? 'maleQuestions' : 'femaleQuestions';
+    LocalKeyStore.getKey(gender, (questions) => {
+      this.setState({ questions });
+    });
   }
 
   _handleYup = (card) => {
@@ -49,7 +56,6 @@ export default class Home extends Component {
   };
 
   render() {
-    const explainItem = styleDict.windowW / 3;
     return (
       <View style={{ flex: 1, alignItems: 'center' }}>
         <View style={{ flex: 1 }}>

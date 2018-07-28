@@ -3,6 +3,7 @@ import Content from './pages/content';
 import About from './pages/about';
 import Instructions from './pages/instructions';
 import QuestionAdd from './pages/questionAdd';
+import QuestionList from './pages/questionList';
 
 const stackConfig = {
   Home: { screen: Home },
@@ -10,6 +11,7 @@ const stackConfig = {
   About: { screen: About },
   Instructions: { screen: Instructions },
   QuestionAdd: { screen: QuestionAdd },
+  QuestionList: { screen: QuestionList },
 };
 
 const stackNavigatorConfig = {

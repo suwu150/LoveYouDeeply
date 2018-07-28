@@ -9,6 +9,8 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <React/RCTRootView.h>
+#import "RNSplashScreen.h"  // 导入启动页组件库
 
 @implementation AppDelegate
 
@@ -29,6 +31,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+//  [RNSplashScreen show];  // 添加启动页展示
   return YES;
 }
 

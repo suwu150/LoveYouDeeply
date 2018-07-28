@@ -4,9 +4,13 @@
 import React, { Component } from 'react';
 import { Drawer, NavBar, Icon, List } from 'antd-mobile-rn';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import StringDistinction from 'react-native-string-distinction';
 import styleDict from '../../constants/styleDict';
+import LocalKeyStore from '../../utils/storageUtil';
+
+import femaleQuestions from '../../constants/female_questions.json';
+import maleQuestions from '../../constants/male_questions.json';
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -37,6 +41,12 @@ export default class Home extends Component {
   componentDidMount() {
     const { navigation } = this.props;
     navigation && navigation.setParams({ onOpenChange: this._onOpenChange });
+    LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
+      Alert.alert(error.message, '');
+    });
+    LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
+      Alert.alert(error.message, '');
+    });
   }
 
   _onOpenChange = () => {
@@ -63,6 +73,7 @@ export default class Home extends Component {
       <List.Item onClick={() => this._onPress('About')}><View><Text>关于软件</Text></View></List.Item>,
       <List.Item onClick={() => this._onPress('Instructions')}><View><Text>使用说明</Text></View></List.Item>,
       <List.Item onClick={() => this._onPress('QuestionAdd')}><View><Text>添加问题</Text></View></List.Item>,
+      <List.Item onClick={() => this._onPress('QuestionList')}><View><Text>问题列表</Text></View></List.Item>,
       <List.Item onClick={() => this._onPress('Version')}><View><Text>版本 1.0</Text></View></List.Item>,
     ];
     return (
