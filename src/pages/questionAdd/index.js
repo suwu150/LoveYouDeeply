@@ -40,9 +40,10 @@ export default class index extends Component {
       });
       LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
         if (error) {
-          return Alert.alert(error.message, '');
+          Alert.alert(error.message, '');
+        } else {
+          Alert.alert('保存成功', '');
         }
-        Alert.alert(error.message, '');
       });
     } else {
       const femaleQuestions = this.state.maleQuestions.concat({
@@ -52,9 +53,10 @@ export default class index extends Component {
       });
       LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
         if (error) {
-          return Alert.alert(error.message, '');
+          Alert.alert(error.message, '');
+        } else {
+          Alert.alert('保存成功', '');
         }
-        Alert.alert(error.message, '');
       });
     }
   };

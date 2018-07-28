@@ -2,15 +2,15 @@
  * Created by jkwu on 2018/6/18.
  */
 import React, { Component } from 'react';
-import { Drawer, NavBar, Icon, List } from 'antd-mobile-rn';
+import { Drawer, List } from 'antd-mobile-rn';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import StringDistinction from 'react-native-string-distinction';
 import styleDict from '../../constants/styleDict';
 import LocalKeyStore from '../../utils/storageUtil';
 
-import femaleQuestions from '../../constants/female_questions.json';
-import maleQuestions from '../../constants/male_questions.json';
+import * as femaleQuestions from '../../constants/female_questions.json';
+import * as maleQuestions from '../../constants/male_questions.json';
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -42,10 +42,20 @@ export default class Home extends Component {
     const { navigation } = this.props;
     navigation && navigation.setParams({ onOpenChange: this._onOpenChange });
     LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
-      Alert.alert(error.message, '');
+      if (error) {
+        Alert.alert(error.message, '');
+      } else {
+        // Alert.alert('保存成功', '');
+      }
     });
+    console.log(femaleQuestions);
+    console.log(maleQuestions);
     LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
-      Alert.alert(error.message, '');
+      if (error) {
+        Alert.alert(error.message, '');
+      } else {
+        // Alert.alert('保存成功', '');
+      }
     });
   }
 

@@ -1,7 +1,7 @@
 /**
  * Created by jkwu on 2018/7/28.
  */
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Text,
   View,
