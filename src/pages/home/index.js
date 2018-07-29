@@ -9,8 +9,8 @@ import StringDistinction from 'react-native-string-distinction';
 import styleDict from '../../constants/styleDict';
 import LocalKeyStore from '../../utils/storageUtil';
 
-import * as femaleQuestions from '../../constants/female_questions.json';
-import * as maleQuestions from '../../constants/male_questions.json';
+import * as femaleQuestions from '../../constants/female_questions';
+import * as maleQuestions from '../../constants/male_questions';
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -41,7 +41,7 @@ export default class Home extends Component {
   componentDidMount() {
     const { navigation } = this.props;
     navigation && navigation.setParams({ onOpenChange: this._onOpenChange });
-    LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
+    LocalKeyStore.setKey('femaleQuestions', femaleQuestions.default, (error) => {
       if (error) {
         Alert.alert(error.message, '');
       } else {
@@ -50,7 +50,7 @@ export default class Home extends Component {
     });
     console.log(femaleQuestions);
     console.log(maleQuestions);
-    LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
+    LocalKeyStore.setKey('maleQuestions', maleQuestions.default, (error) => {
       if (error) {
         Alert.alert(error.message, '');
       } else {

@@ -8,8 +8,8 @@ import {
   FlatList
 } from 'react-native';
 
-const questionItem = (props) => {
-  const _renderRow = (item) => {
+class QuestionItem extends React.Component {
+  _renderRow = (item) => {
     return (
       <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
         <View style={{ flexDirection: 'row' }}>
@@ -23,19 +23,21 @@ const questionItem = (props) => {
     );
   };
 
-  const questions = props && props.questions;
-  return (
-    <FlatList
-      keyExtractor={(item, index) => index.toString()}
-      style={{ flex: 1 }}
-      {...this.props}
-      data={questions}
-      initialNumToRender={questions.length}
-      extraData={this.state}
-      renderItem={_renderRow}
-      showsVerticalScrollIndicator={false}
-    />
-  );
-};
+  render() {
+    const { questions } = this.props;
+    return (
+      <FlatList
+        keyExtractor={(item, index) => index.toString()}
+        style={{ flex: 1 }}
+        {...this.props}
+        data={questions}
+        initialNumToRender={questions.length}
+        extraData={this.state}
+        renderItem={this._renderRow}
+        showsVerticalScrollIndicator={false}
+      />
+    );
+  }
+}
 
-export default questionItem;
+export default QuestionItem;

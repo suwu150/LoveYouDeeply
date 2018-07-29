@@ -2,7 +2,7 @@
  * Created by jkwu on 2018/7/28.
  */
 import React, { Component } from 'react';
-// import { View, } from 'react-native';
+import { View, Text } from 'react-native';
 import { Tabs } from 'antd-mobile-rn';
 import QuestionItem from './questionItem';
 import LocalKeyStore from '../../utils/storageUtil';
