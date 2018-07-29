@@ -22,11 +22,15 @@ export default class QuestionList extends Component {
   }
 
   componentDidMount() {
-    LocalKeyStore.getKey('maleQuestions', (maleQuestions) => {
-      this.setState({ maleQuestions });
+    LocalKeyStore.getKey('maleQuestions', (error, maleQuestions) => {
+      if (!error) {
+        this.setState({ maleQuestions });
+      }
     });
-    LocalKeyStore.getKey('femaleQuestions', (femaleQuestions) => {
-      this.setState({ femaleQuestions });
+    LocalKeyStore.getKey('femaleQuestions', (error, femaleQuestions) => {
+      if (!error) {
+        this.setState({ femaleQuestions });
+      }
     });
   }
 

@@ -66,8 +66,13 @@ export default class Home extends Component {
   };
 
   _toContent = (gender) => {
-    const { navigation } = this.props;
-    navigation.navigate('Content', { gender });
+    const questionType = gender === 'male' ? 'maleQuestions' : 'femaleQuestions';
+    LocalKeyStore.getKey(questionType, (error, questions) => {
+      const { navigation } = this.props;
+      if (!error) {
+        navigation.navigate('Content', { gender, questions });
+      }
+    });
   };
 
   _onPress = (router) => {

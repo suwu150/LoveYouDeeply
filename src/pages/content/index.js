@@ -8,7 +8,6 @@ import Card from './card';
 import NoMoreCard from './noMoreCard';
 import styleDict from '../../constants/styleDict';
 import randomStyle from '../../utils/randomStyle';
-import LocalKeyStore from '../../utils/storageUtil';
 
 export default class Home extends Component {
   constructor(props) {
@@ -17,18 +16,9 @@ export default class Home extends Component {
     const { params } = navigation.state;
     this.state = {
       gender: params.gender,
-      questions: [],
+      questions: params.questions || [],
       totalScore: 0
     };
-  }
-
-  componentDidMount() {
-    const { navigation } = this.props;
-    const { params } = navigation.state;
-    const gender = params.gender === 'male' ? 'maleQuestions' : 'femaleQuestions';
-    LocalKeyStore.getKey(gender, (questions) => {
-      this.setState({ questions });
-    });
   }
 
   _handleYup = (card) => {

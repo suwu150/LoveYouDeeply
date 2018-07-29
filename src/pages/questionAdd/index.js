@@ -78,11 +78,15 @@ export default class index extends Component {
           multiline
           placeholder="你是否知道ta最喜欢的食物"
           placeholderTextColor="#F0D0E9"
+          autoCorrect={false}
+          autoCapitalize={'none'}
+          underlineColorAndroid="transparent"
           style={{
             height: 200,
             padding: 5,
             borderColor: '#d697c6',
-            borderWidth: 1
+            borderWidth: 1,
+            textAlignVertical: 'top'
           }}
           value={this.state.textAreaValue}
           onChangeText={this._onChangeText}
@@ -90,15 +94,17 @@ export default class index extends Component {
         />
         <Picker
           selectedValue={this.state.questionTo}
-          style={{ height: 50, width: 100 }}
+          prompt="问题属性"
+          style={{ height: 50, width: '100%' }}
           onValueChange={(itemValue, itemIndex) => this.setState({ questionTo: itemValue })}
         >
           <Picker.Item label="问男神" value="male" />
           <Picker.Item label="问女神" value="female" />
         </Picker>
         <Picker
+          prompt="选择分值"
           selectedValue={this.state.score}
-          style={{ height: 50, width: 100 }}
+          style={{ height: 50, width: '100%' }}
           onValueChange={(itemValue, itemIndex) => this.setState({ score: itemValue })}
         >
           <Picker.Item label="5" value="5" />
