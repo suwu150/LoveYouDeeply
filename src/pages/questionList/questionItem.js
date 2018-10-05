@@ -9,12 +9,28 @@ import {
 } from 'react-native';
 
 class QuestionItem extends React.Component {
-  _renderRow = (item) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      questions: props.questions
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { questions } = nextProps;
+    if (questions.length !== this.state.questions.length) {
+      this.setState({
+        questions
+      });
+    }
+  }
+
+  _renderRow = ({ item }) => {
     return (
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 15, height: 30 }}>
         <View style={{ flexDirection: 'row' }}>
           <Text>{item.id}</Text>
-          <Text>{item.name}</Text>
+          <Text>  {item.name}</Text>
         </View>
         <View>
           <Text>{item.score}</Text>
@@ -24,11 +40,10 @@ class QuestionItem extends React.Component {
   };
 
   render() {
-    const { questions } = this.props;
+    const { questions } = this.state;
     return (
       <FlatList
         keyExtractor={(item, index) => index.toString()}
-        style={{ flex: 1 }}
         {...this.props}
         data={questions}
         initialNumToRender={questions.length}

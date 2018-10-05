@@ -22,41 +22,54 @@ export default class index extends Component {
   }
 
   componentDidMount() {
-    LocalKeyStore.getKey('maleQuestions', (maleQuestions) => {
-      this.setState({ maleQuestions });
+    LocalKeyStore.getKey('maleQuestions', (error, maleQuestions) => {
+      console.log('maleQuestions', maleQuestions);
+      if (!error) {
+        this.setState({ maleQuestions });
+      }
     });
-    LocalKeyStore.getKey('femaleQuestions', (femaleQuestions) => {
-      this.setState({ femaleQuestions });
+    LocalKeyStore.getKey('femaleQuestions', (error, femaleQuestions) => {
+      console.log('maleQuestions', femaleQuestions);
+      if (!error) {
+        this.setState({ femaleQuestions });
+      }
     });
   }
 
   _saveData = () => {
-    const { score, questionTo, textAreaValue } = this.state;
+    const { score, questionTo, textAreaValue, maleQuestions, femaleQuestions } = this.state;
+    if (!textAreaValue) return Alert.alert('问题内容不能为空');
     if (questionTo === 'male') {
-      const maleQuestions = this.state.maleQuestions.concat({
-        id: this.state.maleQuestions.length + 1,
-        name: textAreaValue,
-        score
-      });
-      LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
-        if (error) {
-          Alert.alert(error.message, '');
-        } else {
-          Alert.alert('保存成功', '');
-        }
+      this.setState({
+        maleQuestions: maleQuestions.concat({
+          id: maleQuestions && maleQuestions.length + 1,
+          name: textAreaValue,
+          score
+        })
+      }, () => {
+        LocalKeyStore.setKey('maleQuestions', this.state.maleQuestions, (error) => {
+          if (error) {
+            Alert.alert(error.message, '');
+          } else {
+            Alert.alert('保存成功', '');
+          }
+        });
       });
     } else {
-      const femaleQuestions = this.state.maleQuestions.concat({
-        id: this.state.femaleQuestions.length + 1,
-        name: textAreaValue,
-        score
-      });
-      LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
-        if (error) {
-          Alert.alert(error.message, '');
-        } else {
-          Alert.alert('保存成功', '');
-        }
+      this.setState({
+        femaleQuestions: femaleQuestions.concat({
+          id: femaleQuestions && femaleQuestions.length + 1,
+          name: textAreaValue,
+          score
+        })
+      }, () => {
+        LocalKeyStore.setKey('femaleQuestions', this.state.femaleQuestions, (error) => {
+          if (error) {
+            Alert.alert(error.message, '');
+          } else {
+            Alert.alert('保存成功', '');
+          }
+        });
       });
     }
   };
@@ -68,7 +81,7 @@ export default class index extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ marginBottom: 20, height: 60, justifyContent: 'center', alignItems: 'center',
+        <View style={{ marginBottom: 10, height: 30, justifyContent: 'center', alignItems: 'center',
           borderBottomWidth: 1, borderColor: '#ffe5ed', width: '100%'
         }}
         >
@@ -82,7 +95,7 @@ export default class index extends Component {
           autoCapitalize={'none'}
           underlineColorAndroid="transparent"
           style={{
-            height: 200,
+            height: 150,
             padding: 5,
             borderColor: '#d697c6',
             borderWidth: 1,

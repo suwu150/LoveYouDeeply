@@ -9,13 +9,11 @@ import StringDistinction from 'react-native-string-distinction';
 import styleDict from '../../constants/styleDict';
 import LocalKeyStore from '../../utils/storageUtil';
 
-import * as femaleQuestions from '../../constants/female_questions';
-import * as maleQuestions from '../../constants/male_questions';
+import { maleQuestions, femaleQuestions } from '../../constants/questions';
 
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => {
     const { params } = navigation.state;
-    // const { onOpenChange } = params;
     return {
       title: '',
       headerLeft: null,
@@ -41,16 +39,14 @@ export default class Home extends Component {
   componentDidMount() {
     const { navigation } = this.props;
     navigation && navigation.setParams({ onOpenChange: this._onOpenChange });
-    LocalKeyStore.setKey('femaleQuestions', femaleQuestions.default, (error) => {
+    LocalKeyStore.setKey('femaleQuestions', femaleQuestions, (error) => {
       if (error) {
         Alert.alert(error.message, '');
       } else {
         // Alert.alert('保存成功', '');
       }
     });
-    console.log(femaleQuestions);
-    console.log(maleQuestions);
-    LocalKeyStore.setKey('maleQuestions', maleQuestions.default, (error) => {
+    LocalKeyStore.setKey('maleQuestions', maleQuestions, (error) => {
       if (error) {
         Alert.alert(error.message, '');
       } else {
