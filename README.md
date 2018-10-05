@@ -12,7 +12,7 @@ tags: react-native
 题，最终获取分值    
 
 #### 二、效果
-![image](https://img-blog.csdn.net/20180814232933125?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N1d3UxNTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)  
+![image](https://github.com/suwu150/LoveYouDeeply/blob/master/loveyou.gif?raw=true)  
 
 #### 三、下载安装与查看
 1.首先，通过命令进行克隆项目
